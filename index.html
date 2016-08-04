@@ -1,0 +1,89 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="parser.js"></script>
+</head>
+
+
+
+<body>
+<div class='row'>
+<div class="col-md-6">
+<textarea id='data' style="width:500px;height:900px;margin-left:20px;"></textarea>
+<button id="submit" style="display:block; margin-left:20%;">Submit</button>
+
+</div>
+	<div class="col-md-4" >
+	<span><h2 style="display:inline-block;">Data:</h2> <h3 id="raw" style="display:inline-block;">Null</h3></span>
+	</div>
+	<div class="col-md-4" >
+	<span><h2 style="display:inline-block;">Compliance:</h2> <h3 id="compliance" style="display:inline-block;">Null</h3></span>
+	</div>
+	<div class="col-md-4" >
+	<span><h2 style="display:inline-block;">IIN:</h2> <h3 id="IIN" style="display:inline-block;">Null</h3></span>
+	</div>
+	<div class="col-md-4" >
+	<span><h2 style="display:inline-block;">AAMVA:</h2> <h3 id="AAMVA" style="display:inline-block;">Null</h3></span>
+	</div>
+	<div class="col-md-4" >
+	<span><h2 style="display:inline-block;">JDV:</h2> <h3 id="JDV" style="display:inline-block;">Null</h3></span>
+	</div>
+	<div class="col-md-4" >
+	<span><h2 style="display:inline-block;">NOE:</h2> <h3 id="NOE" style="display:inline-block;">Null</h3></span>
+	</div>
+	<div class="col-md-4" >
+	<span><h2 style="display:inline-block;">SubType:</h2> <h3 id="subType" style="display:inline-block;">Null</h3></span>
+	</div>
+	<div class="col-md-4" >
+	<span><h2 style="display:inline-block;">ID:</h2> <h3 id="ID" style="display:inline-block;">Null</h3></span>
+	</div>
+	<div class="col-md-4" >
+	<span><h2 style="display:inline-block;">Weight(lb):</h2> <h3 id="weight" style="display:inline-block;">Null</h3></span>
+	</div>
+	<div class="col-md-4" >
+	<span><h2 style="display:inline-block;">Height:</h2> <h3 id="height" style="display:inline-block;">Null</h3></span>
+	</div>
+	<div class="col-md-4" >
+	<span><h2 style="display:inline-block;">DOB:</h2> <h3 id="DOB" style="display:inline-block;">Null</h3></span>
+	</div>
+	<div class="col-md-4" >
+	<span><h2 style="display:inline-block;">Name:</h2> <h3 id="name" style="display:inline-block;">Null</h3></span>
+	</div>
+	<div class="col-md-4" >
+	<span><h2 style="display:inline-block;">Address:</h2> <h3 id="address" style="display:inline-block;">Null</h3></span>
+	</div>
+	<div class="col-md-4" >
+	<span><h2 style="display:inline-block;">ZipCode:</h2> <h3 id="zip" style="display:inline-block;">Null</h3></span>
+	</div>
+	<div class="col-md-4" >
+	<span><h2 style="display:inline-block;">City:</h2> <h3 id="city" style="display:inline-block;">Null</h3></span>
+	</div>
+	<div class="col-md-4" >
+	<span><h2 style="display:inline-block;">Expire:</h2> <h3 id="expire" style="display:inline-block;">Null</h3></span>
+	</div>
+	<div class="col-md-4" >
+	<span><h2 style="display:inline-block;">Issue:</h2> <h3 id="issue" style="display:inline-block;">Null</h3></span>
+	</div>
+
+<script type="text/javascript">
+ $(document).ready(function(){
+ 	setInterval( stopEvents, 200 );
+ 	$('#data').focus();
+
+});
+
+function stopEvents(){
+	if($('#data').is(":focus")==true){
+		 $(document).keydown(function(e){
+		        if(e.which==17 || e.which==74 || e.keyCode == 13){
+		            e.preventDefault();
+		        }
+		    });
+ 	}
+}
+
+</script>	
+</body>
+
+</html>
