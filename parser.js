@@ -46,12 +46,76 @@ function GetIINtoSubType(){						 //This is a root function-meaning that it will
 
 function GetIIN(data){
 	 var str      = data;
-		 $('#IIN').text(str.slice(0,6));
+	 var IIN      = str.slice(0,6);
 		 str 	   = str.slice(6,str.length);   //pops the findings off the substring
-
+		 $('#IIN').text(IIN);
 		 GetAAMVAnum(str)
+		 IIN2State(IIN);
 
 }
+
+function IIN2State(IIN){
+	var lookups = {
+		'636033'	:	'Alabama  '	,
+		'636007'	:	'Louisiana  ',
+		'636058'	:	'Oklahoma '	,
+		'636059'	:	'Alaska '	,
+		'636041'	:	'Maine '	,
+		'636026'	:	'Arizona  '	,
+		'636029'	:	'Oregon '	,
+		'636021'	:	'Arkansas  ',
+		'636003'	:	'Maryland  ',
+		'636025'	:	'Pennsylvania ',
+		'636002'	:	'Massachusetts  ',	
+		'636014'	:	'California ',
+		'636032'	:	'Michigan  ',
+		'636052'	:	'Rhode Island '	,
+		'636038'	:	'Minnesota ',
+		'636020'	:	'Colorado '	,
+		'636051'	:	'Mississippi ',
+		'636005'	:	'South Carolina ',
+		'636006'	:	'Connecticut ',
+		'636030'	:	'Missouri  ',
+		'636042'	:	'South Dakota '	,
+		'636043'	:	'District of Columbia '	,
+		'636008'	:	'Montana ',
+		'636053'	:	'Tennessee ',
+		'636011'	:	'Delaware  ',
+		'636054'	:	'Nebraska ',
+		'636010'	:	'Florida ',
+		'636049'	:	'Nevada ',
+		'636015'	:	'Texas ',
+		'636055'	:	'Georgia ',
+		'636062'	:	'US Virgin Islands ',
+		'636019'	:	'Guam  ',
+		'636039'	:	'New Hampshire ',
+		'636040'	:	'Utah ',
+		'636047'	:	'Hawaii  ',
+		'636036'	:	'New Jersey  ',
+		'636024'	:	'Vermont ',
+		'636009'	:	'New Mexico  ',
+		'636000'	:	'Virginia ',
+		'636050'	:	'Idaho  ',
+		'636001'	:	'New York  ',
+		'636045'	:	'Washington ',
+		'636035'	:	'Illinois  ',
+		'636061'	:	'West Virginia ',
+		'636037'	:	'Indiana  '	,
+		'636004'	:	'North Carolina  ',
+		'636031'	:	'Wisconsin ',
+		'636018'	:	'Iowa ',
+		'636034'	:	'North Dakota  ',
+		'636060'	:	'Wyoming ',
+		'636022'	:	'Kansas  ',
+		'636046'	:	'Kentucky  ',
+		'636023'	:	'Ohio '	
+	};
+
+	var state = lookups[IIN];
+	$('#state').text(state);
+
+}
+
 function GetAAMVAnum(data){
 	 var str      = data;
 		 $('#AAMVA').text(str.slice(0,2));
